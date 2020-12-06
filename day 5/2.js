@@ -11,8 +11,6 @@ function solve(input) {
         seatsFilled[seatID] = "F";
     }
 
-    seatsFilled[seatsFilled.join("").trim().indexOf(" ")] = "M";
-
     return seatsFilled.indexOf(" ", seatsFilled.indexOf("F"));
 }
 
