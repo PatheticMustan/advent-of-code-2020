@@ -1,15 +1,11 @@
 function solve(input, bagsContainingPeeBag) {
-    const bags = input.split("\n");
-    const peeBagLength = bagsContainingPeeBag.length;
-    const memoizedPeeBags = [...bagsContainingPeeBag];    
+    const bags = input.split("\n");  
     
-    // filter out no other bags for perf because ahhhh
     const newPeeBags = bags.filter((bag, i) => {
         if (bagsContainingPeeBag.some(peeBag => bag.indexOf(peeBag) > 0)) {
             bags.splice(i, 1);
             return true;
         }
-        
         return false;
     }).map(bag => bag.split("s contain")[0]);
     
